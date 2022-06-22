@@ -26,11 +26,25 @@ const int PALETTE_ONEDARK[NUMCOLORS] = {
 };
 
 const int PALETTE_NORD[NUMCOLORS] = {
-
+	0x2e3440ff,
+	0xe5e9f0ff,
+	0xa3be8cff,
+	0x8fbcbbff,
+	0x88c0d0ff,
+	0x81a1c1ff,
+	0x5e81acff,
+	0xb48eadff
 };
 
 const int PALETTE_GRUVBOX[NUMCOLORS] = {
-
+	0x282828ff,
+	0xebdbb2ff,
+	0xfb4934ff,
+	0xfe8019ff,
+	0xfabd2fff,
+	0xb8bb26ff,
+	0x83a598ff,
+	0xd3869bff
 };
 
 int palette[NUMCOLORS]; 
@@ -230,6 +244,24 @@ int main(int argc, char *argv[]) {
 						break;
 					case SDLK_i:
 						ITERATIONS *= 2;
+						generateMandelbrotSet(pixels);
+						SDL_BlitSurface(pixels, NULL, screen, NULL);
+						SDL_UpdateWindowSurface(window);
+						break;
+					case SDLK_1:
+						setPalette(PALETTE_ONEDARK);
+						generateMandelbrotSet(pixels);
+						SDL_BlitSurface(pixels, NULL, screen, NULL);
+						SDL_UpdateWindowSurface(window);
+						break;
+					case SDLK_2:
+						setPalette(PALETTE_NORD);
+						generateMandelbrotSet(pixels);
+						SDL_BlitSurface(pixels, NULL, screen, NULL);
+						SDL_UpdateWindowSurface(window);
+						break;
+					case SDLK_3:
+						setPalette(PALETTE_GRUVBOX);
 						generateMandelbrotSet(pixels);
 						SDL_BlitSurface(pixels, NULL, screen, NULL);
 						SDL_UpdateWindowSurface(window);
