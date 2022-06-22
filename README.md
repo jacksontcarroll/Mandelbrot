@@ -1,4 +1,8 @@
 # Mandelbrot Set Explorer
+### Dependencies
+- SDL2
+- Make
+
 ### Usage
 - make
 - ./Mandelbrot.exe {WIDTH} {HEIGHT}
